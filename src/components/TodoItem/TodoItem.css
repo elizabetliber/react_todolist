@@ -1,0 +1,61 @@
+.eachItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 2.5rem 2rem 2rem;
+    min-width: 460px;
+    border-radius: 0.5rem;
+    margin-bottom: 0.7rem;
+    word-break: break-word;
+    color: white;
+    background: rgb(245, 112, 4);
+
+}
+
+.textWrapper {
+    text-align: left;
+    flex-basis: 80%;
+}
+
+.textWrapper h3 {
+    font-size: 2.3rem;
+    margin-bottom: 5px;
+}
+
+.textWrapper p {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+.eachItem:hover {
+    background: rgb(249, 249, 252);
+    color: rgb(183, 64, 26);
+}
+
+.eachItem:hover .fa-trash-alt {
+    color: rgb(214, 47, 61);
+}
+
+.eachItem:hover .fa-edit {
+    color: rgb(100, 214, 47);
+}
+
+.todo-btn {
+    width: 5rem;
+    display: flex;
+    flex-basis: 20%;
+    justify-content: flex-end;
+
+}
+
+input[type="checkbox"]{
+    flex-basis: 20%;
+    transform: scale(2);
+}
+
+label{
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+}
