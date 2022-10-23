@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:ital,wght@1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", italic;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+ }
+.main_content {
+   min-height: 100vh;
+   width: 100%;
+   background: #e74c3c;
+   display: flex;
+   justify-content: center;
+ }
+
+.fa {
+   margin-left: -2.5rem;
+   cursor: pointer;
+   pointer-events: auto;
+   z-index: 10;
+   background-color: #fff;
+   background-image: none;
+   color: #666;
+   -webkit-transition: color 0.15s linear;
+   transition: color 0.15s linear;
+   font-size: 2rem;
+ }
+
+.fa:hover {
+  color: rgb(47, 214, 122);
+}
+
+.fa-trash-alt,
+ .fa-edit,
+ .fa-plus {
+   cursor: pointer;
+   pointer-events: auto;
+   color: rgb(251, 251, 251);
+   -webkit-transition: color 0.15s linear;
+   transition: color 0.15s linear;
+ }
+
+.fa-trash-alt,
+.fa-edit,
+.fa-plus {
+  font-size: 2rem;
+}
+
+.fa-edit, .fa-plus {
+  color: white;
+  margin-left: 1.5rem;
+}
+
+.add_button:hover .fa-plus {
+   color: rgb(100, 214, 47);
+ }
