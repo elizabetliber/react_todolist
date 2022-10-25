@@ -115,8 +115,8 @@ function TodoList() {
                 }
             </div>
 
-            {showLoading && <p className="endText">Loading....</p>}
-            {!showLoading && <p className="endText">End of the list</p>}
+            {showLoading  && <p className="endText">Loading....</p>}
+            {!showLoading && filtered.length > 0 && <p className="endText">End of the list</p>}
         </div>
     );
 }
