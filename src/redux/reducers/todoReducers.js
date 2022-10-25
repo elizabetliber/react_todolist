@@ -1,4 +1,4 @@
-const getInitialState = () => {
+const getInitialList = () => {
     const localTodoList = window.localStorage.getItem('list');
     if (localTodoList) {
         return JSON.parse(localTodoList);
@@ -9,7 +9,8 @@ const getInitialState = () => {
 
 
 const initialState = {
-    list: getInitialState()
+    status: "all",
+    list: getInitialList()
 }
 
 const todoReducers = (state = initialState, action) => {
@@ -42,23 +43,23 @@ const todoReducers = (state = initialState, action) => {
                 ]
             }
         case 'DELETE_TODO':
-            const todoList = window.localStorage.getItem('list');
+            const todos = window.localStorage.getItem('list');
 
-            if (todoList) {
-                const todolistArr = JSON.parse(todoList);
+            if (todos) {
+                const todolistArr = JSON.parse(todos);
 
                 let newArr = todolistArr.filter((elem) => elem.id !== action.id)
+                console.log(newArr)
 
                 window.localStorage.setItem('list', JSON.stringify(newArr));
 
                 console.log("newArr", newArr)
-
                 return {
                     ...state,
                     list: newArr
                 }
             }
-
+            break;
         case 'UPDATE_TODO':
             const todo_list = window.localStorage.getItem('list');
             if (todo_list) {
@@ -67,16 +68,27 @@ const todoReducers = (state = initialState, action) => {
                     if (todo.id === action.payload.id) {
                         todo.title = action.payload.title;
                         todo.description = action.payload.description;
+                        todo.checked = action.payload.checked;
+                        todo.endDate = action.payload.endDate;
+
                     }
                 });
                 window.localStorage.setItem('list', JSON.stringify(todoListArr));
                 return {
                     ...state,
-                    list: todoListArr
+                    list: todoListArr,
                 }
+            }
+            break;
+        case 'UPDATE_STATUS':
+            return {
+                ...state,
+                status: action.payload
             }
         default:
             return state;
+
+
     }
 }
 export default todoReducers;

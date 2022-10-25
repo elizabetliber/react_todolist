@@ -1,8 +1,11 @@
 import React from 'react';
-import {deleteTodo} from "../../redux/actions";
+import {deleteTodo, updateTodo} from "../../redux/actions";
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 import "./TodoItem.css"
+import moment from 'moment/dist/moment';
+import ru from 'moment/dist/locale/ru';
+
 
 function TodoItem({todo}) {
     const dispatch = useDispatch()
@@ -14,15 +17,28 @@ function TodoItem({todo}) {
             dispatch(deleteTodo(todo.id))
         }
     }
+
+    const handleChange = () => {
+        dispatch(
+            updateTodo(
+                {
+                    ...todo,
+                    checked: !todo.checked,
+                    endDate: moment().locale("ru", ru).format('ll')
+                })
+        );
+    };
+
+
     return (
         <div className="eachItem">
             <label>
-                <input type="checkbox"/>
+                <input type="checkbox" checked={todo.checked} onChange={handleChange}/>
                 <div className="textWrapper">
-                    <h3>{todo.title.length > 20 ? todo.title.slice(0, 20) + "..." : todo.title}</h3>
-                    <p>{todo.description.length > 40 ? todo.description.slice(0, 40) + "..." : todo.description}</p>
-                    <p style={{marginTop: "10px"}}>Start: <span>{todo.startDate}</span></p>
-                    <p>End: <span>{todo.endDate}</span></p>
+                    <h3 style={todo.checked ? {textDecoration: "line-through"} : {textDecoration: "none"}}>{todo.title.length > 20 ? todo.title.slice(0, 16) + "..." : todo.title}</h3>
+                    <p style={todo.checked ? {textDecoration: "line-through"} : {textDecoration: "none"}}>{todo.description.length > 40 ? todo.description.slice(0, 40) + "..." : todo.description}</p>
+                    <p className="date">Start: <span>{todo.startDate}</span></p>
+                    {todo.checked && (<p>End: <span>{todo.endDate}</span></p>)}
                 </div>
             </label>
 

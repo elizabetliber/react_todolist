@@ -1,59 +1,23 @@
-input[type="text"], textarea {
-    min-width: 40rem;
-    padding: 2rem 1.2rem;
-    font-size: 1.8rem;
-    line-height: 1.42857143;
-    margin-top: 2rem;
-    color: rgb(58, 57, 57);
-    background-color: #fff;
-    background-image: none;
-    border: 0.1rem solid #ccc;
-    border-radius: 0.4rem;
-    -webkit-box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
-    box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-
-input[type="text"],
-input[type="text"]:focus,
-input[type="text"]:active,
-input[type="text"]:active:focus {
-    border: none;
-    padding: 2.3rem 1.5rem;
-    outline: none;
-}
-
-textarea,
-textarea:focus,
-textarea:active,
-textarea:active:focus {
-    border: none;
-    padding: 2.3rem 1.5rem;
-    outline: none;
-}
-
-input[type="text"] {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-}
-
-input[type="text"]:focus {
-    -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-}
-
-.todo_list {
+.todolistWrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-width: 460px;
 }
-
-.add_button {
+.todoHeader{
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.addButton:hover .fa-plus {
+    color: rgb(100, 214, 47);
+}
+
+.addButton {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 2rem;
     padding: 1.5rem 6rem;
@@ -61,20 +25,96 @@ input[type="text"]:focus {
     border-radius: 5px;
     background: -webkit-linear-gradient(90deg, #f9cc7b, #f7764a);
     background: linear-gradient(90deg, #f9cc7b, #f7764a);
-
 }
 
-.add_button:hover {
+.addButton:hover {
     background: -webkit-linear-gradient(90deg, #f7764a, #f9cc7b);
     background: linear-gradient(90deg, #f7764a, #f9cc7b)
+}
+
+.addButton p{
+    color: white;
+    font-size: 2rem;
 }
 
 .showItems {
     margin-top: 3rem;
     text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.fa-plus {
+    cursor: pointer;
+    pointer-events: auto;
+    color: rgb(251, 251, 251);
+    -webkit-transition: color 0.15s linear;
+    transition: color 0.15s linear;
 }
 
 
+.fa-plus {
+    font-size: 2.5rem;
+}
+
+.fa-plus {
+    color: white;
+    margin-left: 1.5rem;
+}
+
+.endText{
+    color: white;
+    font-size: 24px;
+}
+@media only screen and (max-width: 550px) {
+    .todolistWrapper {
+        min-width: 360px;
+    }
+    .addButton {
+        padding: 1rem 2.7rem;
+    }
+    .fa-plus {
+        font-size: 2rem;
+    }
+    .addButton p{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .todolistWrapper {
+        min-width: 300px;
+    }
+
+    .addButton {
+        padding: 1rem 2.5rem;
+    }
+
+    .addButton p{
+        font-size: 1.5rem;
+    }
+
+    .endText{
+        font-size: 20px;
+     }
+}
+
+@media only screen and (max-width: 310px) {
+    .todolistWrapper {
+        min-width: 260px;
+    }
+    .fa-plus {
+        font-size: 1.6rem;
+    }
+    .addButton {
+        padding: 1rem 2rem;
+    }
+
+    .addButton p{
+        font-size: 1.5rem;
+    }
+}
 
 
 

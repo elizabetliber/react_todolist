@@ -18,3 +18,10 @@ export const updateTodo = (data) => {
         payload: data
     }
 }
+export const updateStatus = (status) => {
+    return {
+        type: 'UPDATE_STATUS',
+        payload: status
+    }
+}
+

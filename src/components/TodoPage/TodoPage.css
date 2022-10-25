@@ -1,9 +1,120 @@
+input[type="text"], textarea {
+    min-width: 46rem;
+    font-size: 1.8rem;
+    line-height: 1.42857143;
+    margin-top: 2rem;
+    color: rgb(58, 57, 57);
+    background-color: #fff;
+    background-image: none;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    -webkit-box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
+    box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+input[type="text"]:active,
+input[type="text"]:active:focus {
+    border: none;
+    padding: 2.3rem 1.5rem;
+    outline: none;
+}
+
+textarea,
+textarea:focus,
+textarea:active,
+textarea:active:focus {
+    border: none;
+    padding: 2.3rem 1.5rem;
+    outline: none;
+}
+
+input[type="text"] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+input[type="text"]:focus {
+    -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form h3{
+    color: white;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
 .todoItem {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
-.add-todo {
-     padding: 1rem 2rem;
-     margin-top: 2rem;
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1.5rem 6rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    background: -webkit-linear-gradient(90deg, #f9cc7b, #f7764a);
+    background: linear-gradient(90deg, #f9cc7b, #f7764a);
+
+}
+
+.button:hover {
+    background: -webkit-linear-gradient(90deg, #f7764a, #f9cc7b);
+    background: linear-gradient(90deg, #f7764a, #f9cc7b)
+}
+
+.button p {
+    color: white;
+    font-size: 2rem;
+}
+
+
+@media only screen and (max-width: 550px) {
+    input[type="text"], textarea {
+        min-width: 36rem;
+    }
+    input[type="text"], textarea{
+        padding: 1.5rem 1.5rem;;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    input[type="text"], textarea {
+        min-width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    input[type="text"], textarea {
+        min-width: 25rem;
+    }
+    .button {
+        margin-top: 2rem;
+        padding: 1.2rem 6rem;
+    }
+
+    .button:hover {
+        background: -webkit-linear-gradient(90deg, #f7764a, #f9cc7b);
+        background: linear-gradient(90deg, #f7764a, #f9cc7b)
+    }
+
+    .button p {
+        color: white;
+        font-size: 1.8rem;
+    }
 }
