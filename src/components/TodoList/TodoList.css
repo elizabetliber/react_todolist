@@ -11,8 +11,11 @@
     align-items: center;
 }
 
+
+
+/* CHANGED  */
 .addButton:hover .fa-plus {
-    color: rgb(100, 214, 47);
+    color: rgb(255, 0, 0);
 }
 
 .addButton {
